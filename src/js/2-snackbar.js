@@ -13,9 +13,9 @@ promiseForm.addEventListener('submit', event => {
     const promise = new Promise((resolve, reject) => {
       setTimeout(() => {
         if (selectedRadio.value === 'fulfilled') {
-          resolve(`Fulfilled promise in ${delay} ms`);
+          resolve(delay);
         } else {
-          reject(`Rejected promise in ${delay} ms`);
+          reject(delay);
         }
       }, delay);
     });
@@ -25,7 +25,7 @@ promiseForm.addEventListener('submit', event => {
             class: 'promise-message',
             iconUrl: "/img/circle-down.svg",
             iconColor: 'grey',
-            message: result,
+            message: `Fulfilled promise in ${result} ms`,
             messageColor: 'white',
             messageSize: '18',
             backgroundColor: 'green',
@@ -40,7 +40,7 @@ promiseForm.addEventListener('submit', event => {
             class: 'promise-message',
           iconUrl: "/img/cancel-circle.svg",
           iconColor: 'grey',
-          message: error,
+          message: `Rejected promise in ${error} ms`,
           messageColor: 'white',
           messageSize: '18',
           backgroundColor: 'red',

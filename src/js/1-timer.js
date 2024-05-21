@@ -41,26 +41,28 @@ const options = {
     } else {
       setTimerBtn.disabled = false;
     }
-    setTimerBtn.addEventListener('click', () => {
-      setTimerBtn.disabled = true;
-      datetimePicker.disabled = true;
-      const intervalId = setInterval(() => {
-        let currentTime = Date.now();
-        let ms = endTime - currentTime;
-
-        if (ms <= 0) {
-          clearInterval(intervalId);
-          ms = 0;
-          setTimerBtn.disabled = false;
-          datetimePicker.disabled = false;
-        }
-
-        const remainingTime = convertMs(ms); // Отримати залишковий час
-        fillRemaingTime(remainingTime); // Заповнити залишковий час
-      }, 1000);
-    });
   },
+  
 };
+
+setTimerBtn.addEventListener('click', () => {
+  setTimerBtn.disabled = true;
+  datetimePicker.disabled = true;
+  const intervalId = setInterval(() => {
+    let currentTime = Date.now();
+    let ms = endTime - currentTime;
+
+    if (ms <= 0) {
+      clearInterval(intervalId);
+      ms = 0;
+      datetimePicker.disabled = false;
+    }
+
+    const remainingTime = convertMs(ms); // Отримати залишковий час
+    fillRemaingTime(remainingTime); // Заповнити залишковий час
+  }, 1000);
+});
+
 
 flatpickr(datetimePicker, options);
 
