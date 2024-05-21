@@ -23,7 +23,7 @@ promiseForm.addEventListener('submit', event => {
       .then(result => {
         iziToast.show({
             class: 'promise-message',
-            iconUrl: "/img/circle-down.svg",
+            iconUrl: "/circle-down.svg",
             iconColor: 'grey',
             message: `Fulfilled promise in ${result} ms`,
             messageColor: 'white',
@@ -38,7 +38,7 @@ promiseForm.addEventListener('submit', event => {
       .catch(error => {
         iziToast.show({
             class: 'promise-message',
-          iconUrl: "/img/cancel-circle.svg",
+          iconUrl: "/cancel-circle.svg",
           iconColor: 'grey',
           message: `Rejected promise in ${error} ms`,
           messageColor: 'white',

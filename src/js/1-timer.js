@@ -26,7 +26,7 @@ const options = {
     endTime = userSelectedDate.getTime();
     if (endTime - startTime < 0) {
       iziToast.show({
-        iconUrl: "/img/cancel-circle.svg",
+        iconUrl: "/cancel-circle.svg",
         iconColor: 'grey',
         message: 'Please choose a date in the future',
         messageColor: 'white',
