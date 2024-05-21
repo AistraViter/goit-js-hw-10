@@ -3,6 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+
 const datetimePicker = document.querySelector('#datetime-picker');
 const setTimerBtn = document.querySelector('.set-timer-btn');
 setTimerBtn.disabled = true;
@@ -26,7 +27,7 @@ const options = {
     endTime = userSelectedDate.getTime();
     if (endTime - startTime < 0) {
       iziToast.show({
-        iconUrl: "/cancel-circle.svg",
+        iconUrl: "/goit-js-hw-10/cancel-circle.svg",
         iconColor: 'grey',
         message: 'Please choose a date in the future',
         messageColor: 'white',
